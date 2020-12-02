@@ -57,6 +57,7 @@ article img{ /*размер изображений слайдера*/
 	height: 68px;
 	width: 68px;
 }
+
 @media all and (max-width:60em){
 	#switch1:checked ~ #controls label:nth-child(4), 
 #switch2:checked ~ #controls label:nth-child(1),
@@ -77,6 +78,7 @@ article img{ /*размер изображений слайдера*/
 	margin: 0 0 0 0;
 	height: 32px;
 	width: 32px;
+}
 }
 label, a{ /*при наведении на стрелки или переключатели - курсор изменится*/
 	cursor: pointer;
