@@ -76,7 +76,7 @@ body{
             text-decoration: none;
         }
         .open_menu_mobile{
-            display: block;
+            display: none;
             position: absolute;
             width: 25px;
             height: 20px;
