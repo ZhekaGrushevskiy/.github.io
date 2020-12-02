@@ -561,6 +561,12 @@ body{
     .logo_massage div{
         font-size: 15px;
     }
+    .send input,.record button{
+        color: black;
+        font-size: small;
+        height: 30px;
+        padding:0px 10px;
+    }
 }
 @media all and (max-width:280px){
     .name_tel{
