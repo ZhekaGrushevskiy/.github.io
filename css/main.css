@@ -288,29 +288,11 @@ body{
                 font-size: 15px;
             }
         .record{
-            border: 2px solid black;
-            text-align: center;
+            
             margin: 0px auto;
             margin-bottom:40px ;
-            background-color: #F8F8F8;
-            border-radius: 5px;
-            line-height: 50px;
+            
         }
-            .record a{
-                color: black;
-                text-decoration: none;
-                font-weight: bold;
-                font-size: large;
-                font-family: 'Oswald', sans-serif;
-                padding:0px  20px;
-                height: 50px;
-            }
-            .record:hover{
-                background-color: lightgrey;
-                box-shadow: 0 0 10px black;
-                transition: all 0.2s ease;
-                transform: scale(1.1);
-            }
     #block_massage{
         margin: 20px 0px;
         text-align: center;
@@ -400,9 +382,9 @@ body{
                     font-size: 15px;
                 }      
                 .send{
-                margin-top: 20px;
+                    margin-top: 20px;
                 }
-                .send input{
+                .send input,.record button{
                     color: black;
                     font-size: large;
                     height: 50px;
@@ -411,12 +393,14 @@ body{
                     border-radius: 4px;
                     font-weight: bold;
                     font-family: 'Oswald', sans-serif;
+
                 }
-                .send input:hover{
+                .send input:hover,.record button:hover{
                     background-color: lightgrey;
                     box-shadow: 0 0 10px black;
                     transition: all 0.2s ease;
                     transform: scale(1.1);
+                    cursor: pointer;
                 }
 #footer{
     background-color: lightgrey;
