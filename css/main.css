@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Piedra&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0px auto;
+}
+#header{
+    display: flex;
+    position: relative;
+    margin: 0px auto;
+}
+.logo{
+    flex-basis: 30%;
+}
+    .logo div:first-child{
+        float: left;
+    }
+    .logo div:last-child{
+        margin-left:71px ;
+        margin-top: 20px;
+        font-family: 'Sansita Swashed', cursive;
+        font-size: 30px;
+    }
+    .logo a{
+        text-decoration: none;
+        color: black;
+    }
+.menu{
+    flex-basis: 70% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+    .menu ul{
+        margin-left:20px ;
+        display: flex;
+        flex-direction: row;
+    }
+    .menu li{
+        list-style-type: none;
+    }
+    .menu a{
+        padding: 35px 10px;
+        text-decoration: none;
+        color: black;
+    }
+    .menu a.active,.menu a:hover{
+        color: #ba7f32;
+        background: rgb(211, 211, 211,0.6);
+    } 
+    .menu_mobile{
+        background-color: rgb(211, 211, 211,0.8);
+        display: none;
+        position: fixed;
+        top: -200px;
+        right: 2px;
+        padding: 20px;
+        box-shadow: 0 0 10px black inset;
+        transition: top 0.2s ease;
+        z-index: 3;
+        font-weight: bold;
+    }
+        .menu_mobile li{
+            list-style-type: none;
+        }
+        .menu_mobile a{
+            color: black;
+            text-decoration: none;
+        }
+        .menu_mobile a.active,.menu_mobile a:hover{
+            color: #ba7f32;
+            text-decoration: none;
+        }
+        .open_menu_mobile{
+            display: block;
+            position: absolute;
+            width: 25px;
+            height: 20px;
+            top: 30px;
+            right:20px ;
+        }
+        
+        .open_menu_mobile span{
+            position: absolute;
+            background-color: black;
+            left:0;
+            width: 100%;
+            height: 2px;
+            top: 9px;
+
+        }
+        .open_menu_mobile::before,
+        .open_menu_mobile::after{
+            content: '';
+            background-color: black;
+            position: absolute; 
+            width: 100%;
+            height: 2px;
+            left: 0;
+            transition: all 0.2s ease;
+        }
+        .open_menu_mobile:hover::before,
+        .open_menu_mobile:hover::after{
+            animation: anim1 2s ease-in infinite;
+        }
+        .open_menu_mobile:hover span{
+            animation: anim1 2s ease-in infinite 1s;
+        }
+        .open_menu_mobile.active:hover::before,
+        .open_menu_mobile.active:hover::after{
+            animation: none;
+        }
+        .open_menu_mobile.active:hover span{
+            animation: none;
+        }
+        @keyframes anim1{
+            from{width:100%;}
+            50%{width: 80%;}
+            to{width: 100%;}
+        }
+        .open_menu_mobile::before{
+            top: 0;
+        }
+        .open_menu_mobile::after{
+            bottom: 0;
+        }
+        .open_menu_mobile.active::before{
+            transform: rotate(45deg);
+            top: 9px;
+        }
+        .open_menu_mobile.active::after{
+            transform: rotate(-45deg);
+            bottom: 9px;
+        }
+        .open_menu_mobile.active span{
+            transform: scale(0);
+            transition: all 0.2s ease;
+        }
+        .menu_mobile.active{
+            top:90px ;
+        }
+
+        div.open_menu_mobile:hover{
+            cursor: pointer;
+        }
+#content{
+    background-color: lightgrey;
+}
+    #content_logo{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    }
+    .big_logo{
+       position: absolute;
+       font-family: 'Oswald', sans-serif;
+       text-align: center;
+       font-size: 40px;
+    }
+    .big_logo::before{
+        content:url("../fon_images/left_quotes.png");
+        position: relative;
+        top: -10px;
+    }
+    .big_logo::after{
+        content:url("../fon_images/right_quotes.png");
+        position: relative;
+        top: 10px;
+    }
+    #line-title{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .name-title{
+        font-family: 'Oswald', sans-serif;
+        font-size: 30px;  
+    }
+    .blocks{
+        display: flex;
+        justify-content: space-around;
+    }
+    #block1,#block2,#block3{
+        width: 360px;
+        height: 360px;
+        display: flex;
+        justify-content: left;
+        border-radius:10px ;
+        position: relative;
+    }
+    #block1{
+        background:url('../fon_images/1block.JPG');
+    }
+    #block2{
+        background:url('../fon_images/2block.JPG');
+    }
+    #block3{
+        background:url('../fon_images/3block.JPG');
+    }
+    .blocks img{
+        width: 100px;
+    }
+    .blocks .image{
+        padding-top:40px;
+        padding-left: 30px;
+    }
+    .blocks #block1 .text,
+    .blocks #block2 .text,
+    .blocks #block3 .text{
+        position: absolute;
+        top:250px ;
+        left: 10px;
+        text-align: center;
+        background: black;
+        color: white;
+        padding: 10px;
+        z-index: -1;
+        transition: z-index .2s ease;
+    }
+    #block1:hover .text,
+    #block2:hover .text,
+    #block3:hover .text{
+        z-index: 1;
+        box-shadow: 0 0 20px black;
+    }
+    #block1:hover,
+    #block2:hover,
+    #block3:hover{
+        box-shadow: 0 0 20px black;
+        transition: all 0.5s ease;
+    }
+    #about{
+        margin: 40px auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: lightgrey;
+    }
+        .logo_about{
+            height: 100px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;  
+            display: flex;
+            align-items: center;
+        }
+            .logo_about div{
+                margin: 0px auto;
+            }
+            .image_about div{
+            background: url('../fon_images/about.PNG');
+            box-shadow: 0 0 20px black;
+            width: 250px;
+            height: 250px;
+            border-radius: 125px;
+            margin: 0px auto;
+            animation: anim3 2s linear infinite;
+            }
+        @keyframes anim3{
+            from{box-shadow:0 0 20px black;}
+            50%{box-shadow: 0 0 10px black;}
+            to{box-shadow: 0 0 20px black;}
+        }
+        .text_about{
+            text-align: center;
+            margin: 40px auto;
+            width: 70%;
+            font-family: 'Oswald', sans-serif;
+            word-spacing: 5px normal ;
+            font-size: 20px;
+            }
+            .text_about ul{
+            text-align: left;
+            }
+            .text_about p:first-child{
+                font-weight: bold;
+            }
+            .text_about p:last-child{
+                text-align: right;
+                font-size: 15px;
+            }
+        .record{
+            border: 2px solid black;
+            text-align: center;
+            margin: 0px auto;
+            margin-bottom:40px ;
+            background-color: #F8F8F8;
+            border-radius: 5px;
+            line-height: 50px;
+        }
+            .record a{
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: large;
+                font-family: 'Oswald', sans-serif;
+                padding:0px  20px;
+                height: 50px;
+            }
+            .record:hover{
+                background-color: lightgrey;
+                box-shadow: 0 0 10px black;
+                transition: all 0.2s ease;
+                transform: scale(1.1);
+            }
+    #block_massage{
+        margin: 20px 0px;
+        text-align: center;
+    }
+        .logo_massage{
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;  
+            margin: 20px;
+        }
+        .name_tel{
+            width:950px;
+            margin: 0px auto;
+            height: 130px;
+        }
+            .name{
+                float: left;
+            }
+            .tel{
+                float:right;
+            }
+            
+            .name_tel input:focus,textarea:focus{
+                box-shadow: 0 0 10px black inset;
+            }
+                    .name input,.tel input{
+                    height: 80px;
+                    width:400px ;
+                    padding-left: 50px;
+                    background-color: lightgrey;
+                    border:1px solid black ;
+                    font-family: 'Oswald', sans-serif;
+                    }
+                .name,.tel{
+                    position: relative;
+                }
+                .name::before{
+                    content: url('../fon_images/pen.png');
+                    position: absolute;
+                    filter: opacity(0.6);
+                    top: 28px;
+                    left: 11px;
+                }
+                .tel::before{
+                    content: url('../fon_images/phone-call.png');
+                    position: absolute;
+                    filter: opacity(0.6);
+                    top: 28px;
+                    left: 11px;
+                }
+                .msg{
+                    position: relative;
+                    margin: 0px auto;
+                    width: 950px;
+
+                }
+                .msg::before{
+                    content: url('../fon_images/email.png');
+                    position: absolute;
+                    filter: opacity(0.6);
+                    top: 50px;
+                    left: 11px;
+                    
+                }
+                .name:hover:before{
+                    filter: opacity(1);
+                }
+                .tel:hover:before{
+                    filter: opacity(1);
+                }
+                .msg:hover:before{
+                    filter: opacity(1);
+                }
+                .name input:hover,.tel input:hover,.msg textarea:hover{
+                    font-weight: bold;
+                    transition: all 0.2s linear;
+                }
+                   
+        
+                .msg textarea{
+                    font-family: 'Oswald', sans-serif;
+                    width: 900px;
+                    border: 1px solid black;
+                    height: 200px;
+                    background-color: lightgrey;
+                    padding-left: 50px;
+                    padding-top:50px;
+                    font-size: 15px;
+                }      
+                .send{
+                margin-top: 20px;
+                }
+                .send input{
+                    color: black;
+                    font-size: large;
+                    height: 50px;
+                    padding:0px 20px;
+                    border: 2px solid black;
+                    border-radius: 4px;
+                    font-weight: bold;
+                    font-family: 'Oswald', sans-serif;
+                }
+                .send input:hover{
+                    background-color: lightgrey;
+                    box-shadow: 0 0 10px black;
+                    transition: all 0.2s ease;
+                    transform: scale(1.1);
+                }
+#footer{
+    background-color: lightgrey;
+    height: 200px;
+}
+    .social_network{
+        text-align: center;
+        height: 100%;
+    }
+        .social_network a{
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            margin-top:70px ;
+            padding:0px 40px;
+        }
+        #footer a:hover{
+        animation: anim 2s ease infinite;
+        /* opacity: 0.8; */
+        color: #ba7f32;
+        }   
+@keyframes anim{
+    from{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+    .social_network div{
+        margin-top: 50px;
+        font-size: 20px;
+        font-family: 'Oswald', sans-serif;
+    }
+@media all and (max-width:60em){
+    
+    .social_network a{
+        padding: 0px 20px;
+    }
+    .social_network div{
+        font-size: 15px;
+    }
+    .name_tel{
+        margin-bottom: 0px;
+        height: 130px;
+    }
+    .logo_massage{
+        font-size: 20px;
+    }
+    .name_tel{
+        height: 210px;
+        width: 310px;
+    }
+    .name{
+        float: none;
+        margin-bottom: 20px;
+    }
+    .tel{
+        float:none;
+    }
+    .name input,.tel input{
+        width:260px;
+    }
+    .msg textarea{
+        width: 260px;
+    }
+    .msg{
+        width: 310px;
+    }
+    .logo div:last-child{
+        font-size: 27px;
+    }
+    #content_logo{
+        height: 150px;
+    }
+    .big_logo{
+        font-size: 15px;
+     }
+     .big_logo::before{
+         content:url("../fon_images/left_quotes1.png");
+         position: relative;
+         top: -10px;
+     }
+     .big_logo::after{
+         content:url("../fon_images/right_quotes1.png");
+         position: relative;
+         top: 10px;
+     }
+    .menu{
+        display: none;
+    }
+    .menu_mobile{
+        display: block;
+    }
+    .open_menu_mobile{
+        display: block;
+    }
+    #content_logo{
+        font-size:15px 
+    }
+    .name-title{
+        font-size: 15px;
+    }
+    .blocks{
+        flex-direction: column;
+        align-items: center;
+    }
+    #block1{
+        background:url('../fon_images/1block.JPG');
+        width: 320px;
+    }
+    #block2{
+        background:url('../fon_images/2block.JPG');
+        width: 320px;
+    }
+    #block3{
+        background:url('../fon_images/3block.JPG');
+        width: 320px;
+    }
+    .blocks #block1 .text,
+    .blocks #block2 .text,
+    .blocks #block3 .text{
+        position: absolute;
+        top:250px ;
+        left: 10px;
+        text-align: center;
+        background: black;
+        color: white;
+        padding: 10px;
+        z-index: 1;
+    }
+    #block1:hover .text,
+    #block2:hover .text,
+    #block3:hover .text{
+        z-index: 1;
+        box-shadow: none;
+    }
+    #block1:hover,
+    #block2:hover,
+    #block3:hover{
+        box-shadow:none;
+    } 
+    #block1,#block2,#block3{
+       margin-bottom: 20px ;
+    }
+    .text_about{
+        width: 80%;
+    }
+    .logo_about,.text_about{
+        font-size: 15px;
+    }
+    .text_about p:last-child{
+        font-size: 12px;
+    }
+    .logo_massage div{
+        font-size: 15px;
+    }
+}
+@media all and (max-width:280px){
+    .name_tel{
+        margin-bottom: 0px;
+    }
+    #block1{
+        background:url('../fon_images/1block_g.JPG');
+        width: 280px;
+    }
+    #block2{
+        background:url('../fon_images/2block_g.JPG');
+        width: 280px;
+    }
+    #block3{
+        background:url('../fon_images/3block_g.JPG');
+        width: 280px;
+    }
+    .name input,.tel input{
+        height: 50px;
+        text-align: left;
+        padding-left: 20px;
+        width: 250px;
+        }
+        .msg textarea{
+            width: 250px;
+        }
+        .form_massage{
+            width: 270px;
+        }
+    .logo div:last-child{
+        font-size: 20px;
+    }
+    .logo_massage div{
+        font-size: 15px;
+    }
+}
