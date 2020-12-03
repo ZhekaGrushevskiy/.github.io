@@ -148,14 +148,14 @@ body{
             width: 100%;
             height: 2px;
             left: 0;
-            transition: all 0.2s ease;
+            transition: all 0.5s ease;
         }
         .open_menu_mobile::before,
         .open_menu_mobile::after{
-            animation: anim1 2s ease-in infinite;
+            animation: anim1 1s ease-in infinite;
         }
         .open_menu_mobile span{
-            animation: anim1 2s ease-in infinite 1s;
+            animation: anim1 1s ease-in infinite .5s;
         }
         .open_menu_mobile:hover::before,
         .open_menu_mobile:hover::after,
