@@ -1,0 +1,14 @@
+@media all and (max-width:80em){
+    #arrow-right{
+        display: none;
+    }
+    li.onlrec a{
+        display: none;
+    }
+    .menu_mobile{
+        display: block;
+    }
+    .open_menu_mobile{
+        display: block;
+    }
+    }

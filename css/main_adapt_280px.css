@@ -1,0 +1,43 @@
+@media all and (max-width:280px){
+    .logo_about{
+        font-size: 13px;
+    }
+    .name_tel{
+        margin-bottom: 0px;
+    }
+    #block1{
+        background:url('../fon_images/1block_g.JPG');
+        width: 270px;
+    }
+    #block2{
+        background:url('../fon_images/2block_g.JPG');
+        width: 270px;
+    }
+    #block3{
+        background:url('../fon_images/3block_g.JPG');
+        width: 270px;
+    }
+
+    .logo div:last-child{
+        font-size: 20px;
+    }
+    .logo_massage div{
+        font-size: 15px;
+    }
+    .name_tel{
+        height: 210px;
+        width: 270px;
+    }
+    .tel{
+        float:none;
+    }
+    .name input,.tel input{
+        width:220px;
+    }
+    .msg textarea{
+        width: 220px;
+    }
+    .msg{
+        width: 270px;
+    }
+}

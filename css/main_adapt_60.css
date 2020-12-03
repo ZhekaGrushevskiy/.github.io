@@ -1,0 +1,72 @@
+@media all and (max-width:60em){
+    .blocks{
+        flex-direction: column;
+        align-items: center;
+    }
+    #block1{
+        background:url('../fon_images/1block.JPG');
+        width: 310px;
+    }
+    #block2{
+        background:url('../fon_images/2block.JPG');
+        width: 310px;
+    }
+    #block3{
+        background:url('../fon_images/3block.JPG');
+        width: 310px;
+    }
+    .blocks #block1 .text,
+    .blocks #block2 .text,
+    .blocks #block3 .text{
+        z-index: 1;
+    }
+    #block1:hover .text,
+    #block2:hover .text,
+    #block3:hover .text{
+        z-index: 1;
+        box-shadow: none;
+    }
+    #block1:hover,
+    #block2:hover,
+    #block3:hover{
+        box-shadow:none;
+    } 
+    .name_tel{
+        height: 210px;
+        width: 310px;
+    }
+    .tel{
+        float:none;
+    }
+    .name input,.tel input{
+        width:250px;
+    }
+    .msg textarea{
+        width: 250px;
+    }
+    .msg{
+        width: 310px;
+    }
+    /* slider */
+    #switch1:checked ~ #controls label:nth-child(4), 
+    #switch2:checked ~ #controls label:nth-child(1),
+    #switch3:checked ~ #controls label:nth-child(2),
+    #switch4:checked ~ #controls label:nth-child(3){
+        background: url('../fon_images/prev1.png') no-repeat; /*заливка фона картинкой без повторений*/
+        margin: 0 0 0 0;
+        height: 32px;
+        width: 32px;
+    }
+    
+    /*настройка переключения и положения для правой стрелки*/
+    #switch1:checked ~ #controls label:nth-child(2), 
+    #switch2:checked ~ #controls label:nth-child(3),
+    #switch3:checked ~ #controls label:nth-child(4),
+    #switch4:checked ~ #controls label:nth-child(1){
+        background: url('../fon_images/next1.png') no-repeat; /*заливка фона картинкой без повторений*/
+        margin: 0 0 0 0;
+        height: 32px;
+        width: 32px;
+    }
+    /* slider */
+}
