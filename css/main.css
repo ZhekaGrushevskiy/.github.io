@@ -542,6 +542,7 @@ body.active{
     .fon2 div:last-child{
         padding-left: 150px;
         text-align: center;
+        padding-right:30px ;
     }
     .procedures{
         background-color: lightgrey;
