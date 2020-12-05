@@ -27,12 +27,11 @@ body.active{
     right: 0px;
     z-index: 1000;
     background-color: white;
-    transform:rotate3d(0, 0, 0, 0deg);
-    transition: transform .3s linear;
+    transition: top .3s linear;
 }
 #header.active{
-    transform:rotate3d(1, 0, 0, -90deg);
-    transition: transform .3s linear;
+    top: -90px;
+    transition: top .3s linear;
 }
 #header-content{
     display: flex;
@@ -126,6 +125,10 @@ body.active{
         transition: top 0.2s ease;
         z-index: 3;
         font-weight: bold;
+    }
+    .menu_mobile.active{
+        top:90px ;
+        display: block;
     }
         .menu_mobile li{
             list-style-type: none;
@@ -221,10 +224,6 @@ body.active{
             transform: scale(0);
             transition: all 0.2s ease;
         }
-        .menu_mobile.active{
-            top:90px ;
-        }
-
         div.open_menu_mobile:hover{
             cursor: pointer;
         }
@@ -517,13 +516,18 @@ body.active{
         font-family: 'Oswald', sans-serif;
     }
     /* _________________procedures_______________ */
+    #fon3{
+        background-color: lightgrey;
+        height: 80px;
+        width: 100%;
+    }
     div.fon1{
         background: url(../fon_images/fon.jpg);
         width: 100%;
         height: 300px;
         display: flex;
         align-items: center;
-        margin-top: 85px;
+        /* margin-top: 85px; */
     }
     div.fon1 .fon2{
         background-color: rgba(3,3,3, 0.6);
@@ -541,8 +545,8 @@ body.active{
     }
     .fon2 div:last-child{
         padding-left: 150px;
-        text-align: center;
         padding-right:30px ;
+        text-align: center;
     }
     .procedures{
         background-color: lightgrey;
@@ -677,3 +681,12 @@ body.active{
     text-decoration: none;
     cursor: pointer;
 }
+/* @media all and (max-width:700px){
+    .modal-content{
+        width: 100%;
+    }
+} */
+    
+  
+
+    
