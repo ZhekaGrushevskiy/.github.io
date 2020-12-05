@@ -1,5 +1,6 @@
 .photos{
 	z-index: 51;
+	margin-top:85px;
 }
 #slider { /*положение слайдера*/
     position: relative;
