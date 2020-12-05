@@ -1,0 +1,88 @@
+@media all and (max-width:240px){
+    .logo div:first-child{
+        float: left;
+        height: 74px;
+        width: 60px;
+    }
+    .logo div:last-child{
+        margin-top: 30px;
+        font-size: 18px !important;
+        margin-left:70px ;
+    }
+    .image_about div{
+        background: url('../fon_images/about1.PNG');
+        box-shadow: 0 0 15px black;
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        margin: 0px auto;
+        animation: anim3 2s linear infinite;
+        }
+    .name_tel{
+        margin-bottom: 0px;
+    }
+    #block1{
+        background:url('../fon_images/1block_g.JPG');
+        width: 230px;
+    }
+    #block2{
+        background:url('../fon_images/2block_g.JPG');
+        width: 230px;
+    }
+    #block3{
+        background:url('../fon_images/3block_g.JPG');
+        width: 230px;
+    }
+
+    .logo div:last-child{
+        font-size: 20px;
+    }
+    .logo_massage div{
+        font-size: 15px;
+    }
+    .name_tel{
+        height: 210px;
+        width: 240px;
+    }
+    .tel{
+        float:none;
+    }
+    .name input,.tel input{
+        width:180px;
+    }
+    .msg textarea{
+        width: 180px;
+    }
+    .msg{
+        width: 240px;
+    }
+    .social_network a{
+        font-size: 30px;
+    }
+    .open_menu_mobile{
+        
+        position: absolute;
+        width: 25px;
+        height: 20px;
+        top: 35px;
+        right:10px ;
+    }
+    .modal .modal-content div:first-child,
+    .modal1 .modal-content div:first-child,
+    .modal2 .modal-content div:first-child,
+    .modal3 .modal-content div:first-child,
+    .modal4 .modal-content div:first-child{
+        width: 220px;
+    }
+    .modal .modal-content img,
+    .modal1 .modal-content img,
+    .modal2 .modal-content img,
+    .modal3 .modal-content img,
+    .modal4 .modal-content img{
+        width: 220px;
+    }
+    .fon2 div:last-child{
+        padding-left: 10px;
+        font-size: 7px;
+    }
+}
