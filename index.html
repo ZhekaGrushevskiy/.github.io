@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -16,16 +16,18 @@
 </head>
 
 <body>
-  <div id="header">
+  
+ <div id="header">
+  <div id="header-content">
     <div class="logo">
-      <div><img width="70px" src="images/1_face_cleaning.png" alt="2лица"></div>
-      <div><a href="index.html">1_face_cleaning</a></div>
+      <div></div>
+      <div><a href="index.html" title="1_face_cleaning">1_face_cleaning</a></div>
     </div>
     <div class="menu">
       <ul>
         <li><a class="active" href="index.html">ГЛАВНАЯ</a></li>
         <li><a href="index1.html">ПРОЦЕДУРЫ</a></li>
-        <li><a href="index2.html">СТОИМОСТЬ</a></li>
+        <li><a href="index2.html">ПРАЙС</a></li>
         <li><a href="index3.html">КОСМЕТОЛОГИ</a></li>
         <li style="position: relative; padding-right:10px;">
         <a href="index4.html">КОНТАКТЫ</a>
@@ -39,21 +41,22 @@
       <span></span> 
     </div>
     <div class="menu_mobile">
-      <ul>
+      <ul >
         <li><a class="active" href="index.html">ГЛАВНАЯ</a></li>
         <li><a href="index1.html">ПРОЦЕДУРЫ</a></li>
-        <li><a href="index2.html">СТОИМОСТЬ</a></li>
+        <li><a href="index2.html">ПРАЙС</a></li>
         <li><a href="index3.html">КОСМЕТОЛОГИ</a></li>
         <li><a href="index4.html">КОНТАКТЫ</a></li>
-        <li><a href="#onlinerecord">ОНЛАЙН ЗАПИСЬ</a></li>
+        <li class="openexit"><a href="#onlinerecord">ОНЛАЙН ЗАПИСЬ</a></li>
       </ul>
     <div class="exit" >
       <span>&times;</span>
     </div>
     </div>
   </div>
+ </div>
 
-  <div class="arrow_nav"><a href="#"><img src="fon_images/up-arrow.png" alt="up"></a></div>
+  <div class="arrow_nav"><a href="#"><img src="fon_images/up-arrow.png" title="наверх" alt="up"></a></div>
  
   <div id="content">
     <!-- slider -->
@@ -88,7 +91,6 @@
         </div>
       </article>
     </div>
-    
     <!-- slider -->
     <div id="content_logo">
       <div class="big_logo">
@@ -103,7 +105,7 @@
   <div class="blocks">
     <div id="block1">
       <div class="image">
-        <img src="images/giftbox.png" alt="ПОДАРОК">
+        <img src="images/giftbox.png"  alt="ПОДАРОК">
       </div>
       <div class="text">
         КАЖДАЯ ДЕСЯТАЯ ПРОЦЕДУРА<br>
@@ -174,17 +176,17 @@
     <div class="logo_massage">
       <div>НАПИШИТЕ НАМ</div>
     </div>
-      <form name="INFO" action='http://fe.it-academy.by/TestForm.php' novalidate method="get">
+      <form id="form_id"  name="INFO" novalidate method="get">
           <div class="name_tel">
             <div class="name">
-              <input tabindex="1" type="text" name="name" value="" placeholder="ВАШЕ ИМЯ">
+              <input data-rule="text" data-from="2" data-to="15" tabindex="1" type="text" name="name"  placeholder="ВАШЕ ИМЯ">
             </div>
             <div class="tel">
-              <input tabindex="2" type="tel" name="tel"  placeholder="ВАШ ТЕЛЕФОН">
+              <input data-rule="number" tabindex="2" type="tel" name="tel"  placeholder="ВАШ ТЕЛЕФОН">
             </div>
           </div>
           <div class="msg">
-            <textarea tabindex="3" name="msg" placeholder="ВАШЕ СООБЩЕНИЕ"></textarea>
+            <textarea  id="messege"   tabindex="3" name="messege"  placeholder="ВАШЕ СООБЩЕНИЕ"></textarea>
           </div>
           <div class="send">
             <input  type="submit" value="Отправить">
@@ -205,5 +207,7 @@
   <script src="js/script.js"></script>
   <script src="js/form.js"></script>
 </body>
+<script>
 
+</script>
 </html>
