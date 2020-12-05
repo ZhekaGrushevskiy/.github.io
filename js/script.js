@@ -19,7 +19,7 @@ $(document).ready(function(){
             $arrow_nav.removeClass('active');
         }     
     });
-    var lastScrollTop = 0;
+    var lastScrollTop = 200;
     var $header = $('#header');
     $(window).scroll(function(event){
         var st = $(this).scrollTop();
