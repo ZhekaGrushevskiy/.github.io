@@ -77,10 +77,18 @@
         font-family: 'Oswald', sans-serif;
         text-align: center;
     }
-    .modal1 .modal-content div:first-child{
+       .modal .modal-content div:first-child,
+    .modal1 .modal-content div:first-child,
+    .modal2 .modal-content div:first-child,
+    .modal3 .modal-content div:first-child,
+    .modal4 .modal-content div:first-child{
         width: 300px;
     }
-    .modal1 .modal-content img{
+    .modal .modal-content img,
+    .modal1 .modal-content img,
+    .modal2 .modal-content img,
+    .modal3 .modal-content img,
+    .modal4 .modal-content img{
         width: 300px;
         margin: 0px auto;
     }
