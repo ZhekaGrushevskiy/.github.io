@@ -1,0 +1,61 @@
+@media all and (max-width:280px){
+    .logo_about{
+        font-size: 13px;
+    }
+    .name_tel{
+        margin-bottom: 0px;
+    }
+    #block1{
+        background:url('../fon_images/1block_g.JPG');
+        width: 270px;
+    }
+    #block2{
+        background:url('../fon_images/2block_g.JPG');
+        width: 270px;
+    }
+    #block3{
+        background:url('../fon_images/3block_g.JPG');
+        width: 270px;
+    }
+
+    .logo div:last-child{
+        font-size: 20px;
+    }
+    .logo_massage div{
+        font-size: 15px;
+    }
+    .name_tel{
+        height: 210px;
+        width: 270px;
+    }
+    .tel{
+        float:none;
+    }
+    .name input,.tel input{
+        width:220px;
+    }
+    .msg textarea{
+        width: 220px;
+    }
+    .msg{
+        width: 270px;
+    }
+    .modal .modal-content div:first-child,
+    .modal1 .modal-content div:first-child,
+    .modal2 .modal-content div:first-child,
+    .modal3 .modal-content div:first-child,
+    .modal4 .modal-content div:first-child{
+        width: 250px;
+    }
+    .modal .modal-content img,
+    .modal1 .modal-content img,
+    .modal2 .modal-content img,
+    .modal3 .modal-content img,
+    .modal4 .modal-content img{
+        width: 250px;
+    }
+    .fon2 div:last-child{
+        padding-left: 15px;
+        font-size: 10px;
+    }
+}

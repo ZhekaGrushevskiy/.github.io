@@ -1,0 +1,235 @@
+@media all and (max-width:60em){
+    .blocks{
+        flex-direction: column;
+        align-items: center;
+    }
+    #block1{
+        background:url('../fon_images/1block.JPG');
+        width: 310px;
+    }
+    #block2{
+        background:url('../fon_images/2block.JPG');
+        width: 310px;
+    }
+    #block3{
+        background:url('../fon_images/3block.JPG');
+        width: 310px;
+    }
+    .blocks #block1 .text,
+    .blocks #block2 .text,
+    .blocks #block3 .text{
+        z-index: 1;
+    }
+    #block1:hover .text,
+    #block2:hover .text,
+    #block3:hover .text{
+        z-index: 1;
+        box-shadow: none;
+    }
+    #block1:hover,
+    #block2:hover,
+    #block3:hover{
+        box-shadow:none;
+    } 
+    .name_tel{
+        height: 210px;
+        width: 310px;
+    }
+    .tel{
+        float:none;
+    }
+    .name input,.tel input{
+        width:250px;
+    }
+    .msg textarea{
+        width: 250px;
+    }
+    .msg{
+        width: 310px;
+    }
+    #switch1:checked ~ #controls label:nth-child(4), 
+    #switch2:checked ~ #controls label:nth-child(1),
+    #switch3:checked ~ #controls label:nth-child(2),
+    #switch4:checked ~ #controls label:nth-child(3){
+        margin: 0 0 0 0 !important;
+    }
+    
+    /*настройка переключения и положения для правой стрелки*/
+    #switch1:checked ~ #controls label:nth-child(2), 
+    #switch2:checked ~ #controls label:nth-child(3),
+    #switch3:checked ~ #controls label:nth-child(4),
+    #switch4:checked ~ #controls label:nth-child(1){
+        margin: 0 0 0 0 !important;
+    }
+    .procedures{
+        padding-bottom:10px;
+    }
+    div.text-a{
+        font-size: 20px;
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+    }
+    .modal .modal-content div:first-child,
+    .modal1 .modal-content div:first-child,
+    .modal2 .modal-content div:first-child,
+    .modal3 .modal-content div:first-child,
+    .modal4 .modal-content div:first-child{
+        width: 300px;
+    }
+    .modal .modal-content img,
+    .modal1 .modal-content img,
+    .modal2 .modal-content img,
+    .modal3 .modal-content img,
+    .modal4 .modal-content img{
+        width: 300px;
+        margin: 0px auto;
+    }
+    div.text-a{
+        font-size: 20px;
+    }
+    #myCare{
+        background:url("../fon_images/cleans1.png");
+    }
+    .fon_price{
+        height: 200px;
+    }
+    .logo-price{
+       right: 60px;
+       top: 20px;
+       font-size: 20px;
+    }
+    @keyframes logo-price{
+        from{
+            top: -200px;
+        }
+        to{
+            top: 20px;
+        }
+    }
+    .name-price{
+        font-size: 20px;
+    }
+    .content-price .left{
+        width: 100%;
+    }
+    .left > div{
+        flex-direction: column;
+    }
+    .left-left > div:first-child{
+       position: static;
+       width: 200px;
+       height: 200px;
+       margin: auto;
+    }
+    .left-left > div:first-child img{
+       width: 200px
+    }
+    .left-left > div:last-child{
+        margin: 0;
+        padding: 10px;
+        height: 100%;
+    }
+    .content-price .right{
+        display: none;
+    }
+    #cosmetologists{
+        flex-direction: column;
+    }
+    .leftc,.rightc{
+        flex-direction: column;
+    }
+    .fon-cosmetologist{
+       height: 150px;
+       background-color: grey;
+       background: none;
+    }
+    .fon-fon{
+        height: 150px;
+        top:0;
+        font-size: 20px;
+        justify-content: center;
+    }
+    .fon-fon div{
+        margin-left:0 ;
+    }
+    .director{
+        flex-direction: column;
+        margin: 0;
+    }
+    .director div:first-child{
+       margin: 0 auto;
+    }
+    .director img,
+    .director div:first-child{
+        width: 200px;
+        height: 200px;
+        border-radius: 100px ;
+    }
+    #contact-content{
+        flex-direction: column;
+    }
+    .contact-right,.contact-left{
+        margin: 20px auto;
+        width: 100%;
+        padding: 0;
+    }
+    #map{
+        padding: 10px;
+        box-shadow: 0 0 10px black;
+        width: 260px;
+        height: 160px;
+    }
+    #admins{
+        flex-direction: column;
+    }
+    #admins div:nth-child(2n){
+        width: 250px;
+        height: 210px;
+        padding: 10px;
+    }
+}
+
+@media all and (max-width:40em){
+    .fon2 div:last-child{
+        padding-left: 20px;
+        font-size: 15px;
+    }
+    div.text-a{
+        font-size: 17px;
+    }
+    .fon_price{
+        height: 100px;
+    }
+   
+}
+@media all and (max-width:30em){
+    .modal .modal-content div:first-child,
+    .modal1 .modal-content div:first-child,
+    .modal2 .modal-content div:first-child,
+    .modal3 .modal-content div:first-child,
+    .modal4 .modal-content div:first-child{
+        width: 260px;
+    }
+    .modal .modal-content img,
+    .modal1 .modal-content img,
+    .modal2 .modal-content img,
+    .modal3 .modal-content img,
+    .modal4 .modal-content img{
+        width: 260px;
+        margin: 0px auto;
+    }
+    .fon2 div:last-child{
+        padding-left: 20px;
+        font-size: 10px;
+    }
+    .modal-content div:last-child{
+        font-size: 20px;
+    }
+    .modal-content div:last-child ol{
+        font-size: 15px;
+        color: wheat;
+    }
+    div.text-a{
+        font-size: 15px;
+    }
+}

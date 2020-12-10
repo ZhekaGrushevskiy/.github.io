@@ -1,0 +1,1137 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Piedra&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.valid{
+    border: 2px solid green !important;
+    box-shadow: 0 0 10px green inset !important;
+}
+.invalid{
+    border: 2px solid red !important;
+    box-shadow: 0 0 10px red inset !important;
+}
+body{
+    margin: 0px auto;
+    max-width: 1400px;
+    border: 1px solid lightgrey ;
+}
+body.active{
+    overflow: hidden;
+}
+#header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+    background-color: white;
+    border-bottom: 2px solid #ba7f32;
+    transition: top .3s linear;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+#header.active{
+    top: -90px;
+    transition: top .2s linear;
+}
+#header-content{
+    display: flex;
+    position: relative;
+    margin: 0px auto;
+    max-width: 1318px;
+}
+.logo{
+    flex-basis: 30%;
+}
+    .logo div:first-child{
+        float: left;
+        background: url('../images/1_face_cleaning.png');
+        width: 70px;
+        height: 84px;
+    }
+    .logo div:last-child{
+        margin-left:71px ;
+        margin-top: 20px;
+        font-family: 'Sansita Swashed', cursive;
+        font-size: 30px;
+    }
+    .logo a{
+        text-decoration: none;
+        color: black;
+    }
+.menu{
+    flex-basis: 70% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    height: 84px;
+}
+    .menu ul{
+        margin-left:20px ;
+        display: flex;
+        flex-direction: row;
+    }
+    .menu li{
+        list-style-type: none;
+    }
+    .menu a{
+        padding: 35px 10px;
+        text-decoration: none;
+        color: black;
+    }
+    .menu li.onlrec a{
+       font-size: 0px;
+       padding: 0;
+    }
+    .menu li.active a{
+        font-size: 15px;
+        padding: 35px 10px;
+        transition: all 0.4s ease;
+    }
+    .arrow_nav{
+        position: fixed;
+        top: 250px;
+        left: 10px;
+        opacity: 0.1;
+        display: none;
+        cursor: pointer;
+        z-index: 50;
+    }
+    .arrow_nav:hover{
+        opacity: 0.2;
+    }
+    .arrow_nav.active{
+        display: block;
+    }
+    #arrow-right{
+        font-size: 30px;
+    }
+    #arrow-right:hover{
+        cursor: pointer;
+    }
+    .menu a.active,.menu a:hover{
+        color: #ba7f32;
+        background: rgb(211, 211, 211,0.6);
+    } 
+    
+    .menu_mobile{
+        background-color: rgb(211, 211, 211,0.8);
+        display: none;
+        position: fixed;
+        top: -200px;
+        right: 2px;
+        padding: 20px;
+        box-shadow: 0 0 10px black inset;
+        transition: top 0.2s ease;
+        z-index: 3;
+        font-weight: bold;
+    }
+    .menu_mobile.active{
+        top:90px ;
+        display: block;
+    }
+        .menu_mobile li{
+            list-style-type: none;
+        }
+        .menu_mobile a{
+            color: black;
+            text-decoration: none;
+        }
+        .menu_mobile a.active,.menu_mobile a:hover{
+            color: #ba7f32;
+            text-decoration: none;
+        }
+        .exit.active{
+            display: block;
+        }
+        .exit{
+            position:absolute;
+            top: 10px;
+            right: 15px;
+            display: none;
+        }
+        .exit:hover{
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        .exit span{
+            font-size: 30px;
+        }
+        .open_menu_mobile{
+            display: none;
+            position: absolute;
+            width: 25px;
+            height: 20px;
+            top: 33px;
+            right:20px ;
+        }
+        
+        .open_menu_mobile span{
+            position: absolute;
+            background-color: black;
+            left:0;
+            width: 100%;
+            height: 2px;
+            top: 9px;
+
+        }
+        .open_menu_mobile::before,
+        .open_menu_mobile::after{
+            content: '';
+            background-color: black;
+            position: absolute; 
+            width: 100%;
+            height: 2px;
+            left: 0;
+            transition: all .5s ease;
+        }
+        .open_menu_mobile::before,
+        .open_menu_mobile::after{
+            animation: anim1 1s ease-in infinite;
+        }
+        .open_menu_mobile span{
+            animation: anim1 1s ease-in infinite .5s;
+        }
+        .open_menu_mobile:hover::before,
+        .open_menu_mobile:hover::after,
+        .open_menu_mobile:hover span{
+            opacity: 0.7;
+        }
+        .open_menu_mobile.active::before,
+        .open_menu_mobile.active::after{
+            animation: none;
+        }
+        @keyframes anim1{
+            from{width:100%;}
+            50%{width: 80%;}
+            to{width: 100%;}
+        }
+        .open_menu_mobile::before{
+            top: 0;
+        }
+        .open_menu_mobile::after{
+            bottom: 0;
+        }
+        .open_menu_mobile.active::before{
+            transform: rotate(45deg);
+            top: 9px;
+        }
+        .open_menu_mobile.active::after{
+            transform: rotate(-45deg);
+            bottom: 9px;
+        }
+        .open_menu_mobile.active span{
+            transform: scale(0);
+            transition: all 0.2s ease;
+        }
+        div.open_menu_mobile:hover{
+            cursor: pointer;
+        }
+#content{
+    background-color: lightgrey;
+}
+    #content_logo{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    }
+    .big_logo{
+       position: absolute;
+       font-family: 'Oswald', sans-serif;
+       text-align: center;
+       font-size: 40px;
+    }
+    .big_logo::before{
+        content:url("../fon_images/left_quotes.png");
+        position: relative;
+        top: -10px;
+    }
+    .big_logo::after{
+        content:url("../fon_images/right_quotes.png");
+        position: relative;
+        top: 10px;
+    }
+    #line-title{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .name-title{
+        font-family: 'Oswald', sans-serif;
+        font-size: 30px;  
+    }
+    .blocks{
+        display: flex;
+        justify-content: space-around;
+    }
+    #block1,#block2,#block3{
+        width: 360px;
+        height: 360px;
+        display: flex;
+        justify-content: left;
+        border-radius:10px ;
+        position: relative;
+    }
+    #block1{
+        background:url('../fon_images/1block.JPG');
+    }
+    #block2{
+        background:url('../fon_images/2block.JPG');
+    }
+    #block3{
+        background:url('../fon_images/3block.JPG');
+    }
+    .blocks img{
+        width: 100px;
+    }
+    .blocks .image{
+        padding-top:40px;
+        padding-left: 30px;
+    }
+    .blocks #block1 .text,
+    .blocks #block2 .text,
+    .blocks #block3 .text{
+        position: absolute;
+        top:250px ;
+        left: 10px;
+        text-align: center;
+        background: black;
+        color: white;
+        padding: 10px;
+        z-index: -1;
+        transition: z-index .2s ease;
+    }
+    #block1:hover .text,
+    #block2:hover .text,
+    #block3:hover .text{
+        z-index: 1;
+        box-shadow: 0 0 20px black;
+    }
+    #block1:hover,
+    #block2:hover,
+    #block3:hover{
+        box-shadow: 0 0 20px black;
+        transition: all 0.5s ease;
+    }
+    #about{
+        margin: 40px auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: lightgrey;
+    }
+        .logo_about{
+            height: 100px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;  
+            display: flex;
+            align-items: center;
+        }
+            .logo_about div{
+                margin: 0px auto;
+            }
+            .image_about div{
+            background: url('../fon_images/about.PNG');
+            box-shadow: 0 0 20px black;
+            width: 250px;
+            height: 250px;
+            border-radius: 125px;
+            margin: 0px auto;
+            animation: anim3 2s linear infinite;
+            }
+        @keyframes anim3{
+            from{box-shadow:0 0 20px black;}
+            50%{box-shadow: 0 0 10px black;}
+            to{box-shadow: 0 0 20px black;}
+        }
+        .text_about{
+            text-align: center;
+            margin: 40px auto;
+            width: 70%;
+            font-family: 'Oswald', sans-serif;
+            word-spacing: 5px normal ;
+            font-size: 20px;
+            }
+            .text_about ul{
+            text-align: left;
+            }
+            .text_about p:first-child{
+                font-weight: bold;
+            }
+            .text_about p:last-child{
+                text-align: right;
+                font-size: 15px;
+            }
+        .record{
+            text-align: center;
+            margin: 0px auto;
+            margin-bottom:40px ;
+        }
+    #block_massage{
+        margin: 20px 0px;
+        text-align: center;
+    }
+        .logo_massage{
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;  
+            margin: 20px;
+        }
+        form *{
+            outline: 0;
+        }
+        .name_tel{
+            width:950px;
+            margin: 0px auto;
+            height: 130px;
+        }
+            .name{
+                float: left;
+            }
+            .tel{
+                float:right;
+            }
+            
+            .name_tel input:focus,textarea:focus{
+                box-shadow: 0 0 10px black inset;
+            }
+                    .name input,.tel input{
+                    height: 80px;
+                    width:400px ;
+                    padding-left: 50px;
+                    background-color: lightgrey;
+                    border:1px solid black ;
+                    font-family: 'Oswald', sans-serif;
+                    }
+                .name,.tel{
+                    position: relative;
+                }
+                .name::before{
+                    content: url('../fon_images/pen.png');
+                    position: absolute;
+                    filter: opacity(0.6);
+                    top: 28px;
+                    left: 11px;
+                }
+                .tel::before{
+                    content: url('../fon_images/phone-call.png');
+                    position: absolute;
+                    filter: opacity(0.6);
+                    top: 28px;
+                    left: 11px;
+                }
+                .msg{
+                    position: relative;
+                    margin: 0px auto;
+                    width: 950px;
+
+                }
+                .msg::before{
+                    content: url('../fon_images/email.png');
+                    position: absolute;
+                    filter: opacity(0.6);
+                    top: 50px;
+                    left: 11px;
+                    
+                }
+                .name:hover::before,
+                .tel:hover::before,
+                .msg:hover::before{
+                    filter: opacity(1);
+                }
+                .name input:hover,.tel input:hover,.msg textarea:hover{
+                    font-weight: bold;
+                    transition: all 0.2s linear;
+                }
+                   
+        
+                .msg textarea{
+                    font-family: 'Oswald', sans-serif;
+                    width: 900px;
+                    border: 1px solid black;
+                    height: 200px;
+                    background-color: lightgrey;
+                    padding-left: 50px;
+                    padding-top:50px;
+                    font-size: 15px;
+                    resize: vertical;
+                }      
+                .send{
+                    margin-top: 20px;
+                }
+                .send input,.record button{
+                    color: black;
+                    font-size: large;
+                    height: 50px;
+                    padding:0px 20px;
+                    border-radius: 4px;
+                    font-weight: bold;
+                    font-family: 'Oswald', sans-serif;
+
+                }
+                .send input:hover,.record button:hover{
+                    background-color: lightgrey;
+                    box-shadow: 0 0 10px black;
+                    transition: all 0.2s ease;
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+#footer{
+    background-color: lightgrey;
+    height: 200px;
+}
+    .social_network{
+        text-align: center;
+        height: 100%;
+    }
+        .social_network a{
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            margin-top:70px ;
+            padding:0px 40px;
+        }
+        #footer a:hover{
+        animation: anim 1.5s ease infinite;
+        color: #ba7f32;
+        }   
+@keyframes anim{
+    from{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+    .social_network div{
+        margin-top: 50px;
+        font-size: 20px;
+        font-family: 'Oswald', sans-serif;
+    }
+    /* _________________procedures_______________ */
+    #fon3{
+        background-color: lightgrey;
+        height: 80px;
+        width: 100%;
+    }
+    div.fon1{
+        background: url(../fon_images/fon.jpg);
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        /* margin-top: 85px; */
+    }
+    div.fon1 .fon2{
+        background-color: rgba(3,3,3, 0.6);
+        width: 100%;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        font-family: 'Oswald', sans-serif;
+        color: wheat;
+    }
+    .fon2 div:first-child{
+        padding: 0px 30px;
+        flex-basis: 250px ;
+        font-size: 30px;
+    }
+    .fon2 div:last-child{
+        padding-left: 150px;
+        padding-right:30px ;
+        text-align: center;
+    }
+    .procedures{
+        background-color: lightgrey;
+            padding-bottom:10px;
+    }       
+    .b1,.b2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .b1 > div,.b2 > div{
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    .text-a{
+        font-size: 25px;
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+        color: wheat;
+    }
+    #myCare:hover,
+    #myCare1:hover,
+    #myCare2:hover,
+    #myCare3:hover,
+    #myCare4:hover{
+        filter: opacity(0.6);
+    }
+    #myCare{
+        background:url("../fon_images/cleans1.png");
+    }
+    #myCare1{
+        background:url("../fon_images/cares1.jpg");
+    }
+    #myCare2{
+        background:url("../fon_images/piling1.jpg");
+    }
+    #myCare3{
+        background:url("../fon_images/month_procedures1.jpg");
+    }
+    #myCare4{
+        background:url("../fon_images/massages1.jpg");
+    }
+    .b1 > div:first-child,
+    .b1 > div:nth-child(2),
+    .b1 > div:last-child,
+    .b2 > div:first-child,
+    .b2 > div:last-child{
+        width: 300px;
+        height: 150px;
+        margin: 10px;
+        position: relative;
+        border-radius:5px ;
+    }
+    .b1 > div:hover:first-child,
+    .b1 > div:hover:nth-child(2),
+    .b1 > div:hover:last-child,
+    .b2 > div:hover:first-child,
+    .b2 > div:hover:last-child{
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: transform .7s ease;
+    }
+
+.modal,.modal1,.modal2,.modal3,.modal4{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top:100px ;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0,0.9);
+}
+.modal-content{
+    margin: 0px auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.modal-content{
+    animation: animscale 0.6s;
+}
+.modal-content div:first-child{
+    width: 500px;
+    margin: auto;   
+}
+.modal-content div:last-child{
+    color: white;
+    margin: auto; 
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom:200px ;
+    padding: 30px;
+}
+.modal-content div:last-child ol{
+    font-size: 20px;
+    color: wheat;
+}
+.modal-content div:last-child ul > li{
+    list-style-type: circle;
+}
+@keyframes animscale{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.close,.close1,.close2,.close3,.close4{
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 70px;
+    font-weight: bold;
+    transition: .3s;
+}
+.close:hover,.close:focus,
+.close1:hover,.close1:focus,
+.close2:hover,.close2:focus,
+.close3:hover,.close3:focus,
+.close4:hover,.close4:focus{
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* ___________косметологи_______ */
+
+.fon-cosmetologist{
+    width:100%;
+    height: 400px;
+    position: relative;
+    background:url('../Cosmetologist/cosmofon.jpg')
+}
+.fon-fon{
+    width: 100%;
+    height: 200px;
+    background-color: rgba(211, 211, 211, 0.7);
+    position: absolute;
+    top: 100px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+.fon-fon div{
+    margin-left:100px ;
+}
+.fon-fon div{
+    animation: text-scale 1s ease-in-out forwards;
+}
+@keyframes text-scale{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+#cosmetologists{
+    width: 100%;
+    display: flex;
+}
+#cosmetologists ul{
+    margin-left:20px;
+    font-family: 'Oswald', sans-serif;
+}
+#cosmetologists li{
+    list-style-type: circle ;
+}
+#cosmetologists h3{
+    margin-bottom:10px ;
+    color: #ba7f32;
+}
+.leftc,.rightc{
+    width: 100%;
+    display: flex;
+}
+.leftc-left,.leftc-right,
+.rightc-left,.rightc-right{
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   align-items: center;
+}
+.leftc-left>div,.leftc-right>div,
+.rightc-left>div,.rightc-right>div{
+    margin: 10px;
+}
+.leftc-left>div:first-child,.leftc-right>div:first-child,
+.rightc-left>div:first-child,.rightc-right>div:first-child{
+   position: relative;
+   overflow: hidden;
+   width: 250px;
+   height: 250px;
+}
+.leftc-left>div:first-child:hover,.leftc-right>div:first-child:hover,
+.rightc-left>div:first-child:hover,.rightc-right>div:first-child:hover{
+    box-shadow: 0 0 10px black ;
+    transition: 1s ease;
+}
+#cosmetologists img:hover,.director img{
+    cursor: pointer;
+    animation: imghover 7s ease-in-out infinite;
+}
+@keyframes imghover{
+    from{transform: scale(1);}
+    50%{transform: scale(1.2);};
+    to{transform: scale(1);};
+}
+
+
+.leftc-left div:last-child,.leftc-right div:last-child,
+.rightc-left div:last-child,.rightc-right div:last-child{
+   padding: 5px;
+}
+.block{
+    position: fixed;
+    display: none;
+    z-index: 1;
+    padding-top:80px;
+   
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow:auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0,0.9);
+}
+.block-content{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 450px;
+    box-shadow: 0 0 0;
+    animation: animblock 0.6s, animboxsh 3s ease-in-out infinite 0.6s;
+    
+}
+@keyframes animboxsh{
+    from{box-shadow: 0 0 0 ;}
+    50%{box-shadow: 0 0 20px white;}
+    to{box-shadow: 0 0 0;}
+}
+#caption{
+    animation: animblock 0.6s;
+    margin: 20px ;
+    text-align: center;
+    font-size: 30px;
+    color: wheat;
+}
+@keyframes animblock {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+#openimg,
+#openimg1,
+#openimg2,
+#openimg3{
+    width: 250px;
+    height: 250px;
+}
+.director{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+.director img{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px ;
+    display: block;
+}
+.director div:first-child{
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    overflow: hidden;
+}
+.director div:first-child:hover{
+    box-shadow: 0 0 10px black ;
+    transition: 1s ease;
+}
+.director div:last-child{
+    padding: 20px;
+}
+.director div h3{
+    color: #ba7f32;
+}
+.director div ul{
+    margin:30px ;
+}
+.director li{
+    list-style-type: circle;
+}
+/* ________________price ______________*/
+.fon_price{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+.fon_price img{
+    width: 100%;
+    transform: scale(1);
+    animation: fon_price 30s ease-in-out infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@keyframes fon_price{
+    from{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.logo-price{
+    position: absolute;
+    z-index: 1;
+    font-size: 40px;
+    right: 100px;
+    top: -200px;
+    font-family: 'Oswald', sans-serif;
+    color: #ba7f32;
+    animation: logo-price 1s ease-out forwards;
+}
+@keyframes logo-price{
+    from{
+        top: -200px;
+    }
+    to{
+        top: 50px;
+    }
+}
+
+.name-price{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Oswald', sans-serif;
+    background-color: white;
+    padding: 10px;
+    color:#ba7f32 ;
+}
+.content-price{
+    display: flex;
+    margin-bottom:10px ;
+}
+.content-price .left{
+    width: 75%;
+}
+.left > div{
+    display: flex;
+}
+.left-left{
+    position: relative;
+}
+.left-left div:first-child{
+    margin: 10px;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+    float: left;
+    position: absolute;
+    box-shadow: 0 0 10px #ba7f32;
+}
+.left-left > div:first-child img{
+    animation: img-scale 20s ease-in-out infinite;
+}
+
+@keyframes img-scale {
+    from{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.left-left > div:last-child{
+    margin: 10px;
+    height: 230px;
+    padding: 10px;
+    font-family: 'Oswald', sans-serif;
+    margin-left:270px;
+}
+.left h2{
+    color: #ba7f32;
+}
+.left p{
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+.left span{
+    color: #ba7f32;
+    margin-top: 20px;
+    font-size: 25px;
+}
+.record-online{
+   margin: 10px 10px 10px 0;
+}
+.record-online button{
+    color: black;
+    font-size: large;
+    height: 40px;
+    padding:0px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+}
+.record-online button:hover{
+    background-color: lightgrey;
+    box-shadow: 0 0 10px black;
+    transition: transform 0.5s ease;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.content-price .right{
+    width: 25%;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgba(211,211,211,0.5);
+    border-radius: 5px;
+    
+}
+.right > div{
+    font-size: small;
+}
+button.read,button.noread,
+button.read1,button.noread1{
+    border: 0px;
+    text-decoration:underline;
+    background-color:transparent;
+    color: green;
+}
+button.read:hover,button.noread:hover,
+button.read1:hover,button.noread1:hover{
+    text-decoration:none;
+    cursor: pointer;
+}
+div.hide,div.hide1{
+    display: none;
+}
+div.hide.active,div.hide1.active{
+    display: block;
+}
+button.read.active,button.read1.active{
+    display: none;
+}
+/* _____контакты____ */
+#contact-content{
+    display: flex;
+    background-color: lightgray;
+}
+.contact-left,.contact-right {
+    width: 50%;
+    font-family: 'Oswald', sans-serif;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.logo-search{
+    color: #ba7f32;
+}
+#map{
+    margin:0 auto;
+    box-shadow: 0 0 10px black;
+    width: 500px;
+    height: 400px;
+}
+.contact-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-detail .phone,
+.contact-detail .address,
+.contact-detail .mail,
+.contact-detail .arrive{
+    padding: 20px;
+    font-size: 20px;
+}
+.contact-detail .address::before{
+    content: url(../fon_images/location-marker.png); 
+}
+.contact-detail .phone::before{
+    content: url(../fon_images/phone.png); 
+}
+.contact-detail .mail::before{
+    content: url(../fon_images/mail.png); 
+}
+.contact-detail .arrive::before{
+    content: url(../fon_images/bus.png); 
+}
+.contact-detail .phone::before,
+.contact-detail .address::before,
+.contact-detail .mail::before,
+.contact-detail .arrive::before{
+    position: relative;
+    top: 5px;
+}
+.contact-detail .phone:hover::before,
+.contact-detail .address:hover::before,
+.contact-detail .mail:hover::before,
+.contact-detail .arrive:hover::before,
+#woman:hover::before,
+#man:hover::before,
+.mob:hover::before,
+#admins div:nth-child(2n) p:hover::before
+{
+    top: 0;
+    transition: .2s ease-in-out;
+}
+#quastionadmin{
+    position: static;
+    padding: 20px;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    background-color: wheat;
+}
+#admins{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:10 px 0 0 10px;
+    background-color: wheat;
+}
+#admins div:nth-child(2n){
+    width: 300px;
+    height: 210px;
+    padding: 40px;
+}
+#admins div:nth-child(2n) span,
+#admins div:nth-child(2n) p{
+   margin: 10px;
+   display: block;
+   font-family: 'Oswald', sans-serif;
+}
+#woman::before{
+    content: url("../fon_images/woman.png");
+}
+#man::before{
+    content: url("../fon_images/man.png");
+}
+.mob::before{
+    content: url("../fon_images/phone.png");
+}
+#admins div:nth-child(2n) p::before,
+#woman::before,
+#man::before,
+.mob::before{
+    position: relative;
+    top: 5px;
+    padding-right: 15px;
+}
+#admins div:nth-child(2n) p::before{
+    content: url('../fon_images/client.png');
+}
+#admins img{
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    box-shadow: 0 0 10px black;
+}
