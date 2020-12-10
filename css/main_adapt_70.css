@@ -89,5 +89,24 @@
         height: 30px;
         padding:0px 10px;
     }
+      .contact-right,.contact-left{
+        margin: 20px auto;
+        width: 100%;
+        padding: 0;
+    }
+    #map{
+        padding: 10px;
+        box-shadow: 0 0 10px black;
+        width: 260px;
+        height: 160px;
+    }
+    #admins{
+        flex-direction: column;
+    }
+    #admins div:nth-child(2n){
+        width: 250px;
+        height: 210px;
+        padding: 10px;
+    }
     
 }
