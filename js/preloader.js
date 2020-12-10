@@ -4,5 +4,5 @@ document.body.onload = function(){
         if(!preloader.classList.contains('active')){
             preloader.classList.add('active');
         }
-    },2000);
+    },500);
 }
